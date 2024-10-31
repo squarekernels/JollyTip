@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvTipPercentLabel: TextView
     private lateinit var tvTipAmount: TextView
     private lateinit var tvTotalAmount: TextView
+    private lateinit var tvTipDescription: TextView
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,9 +41,12 @@ class MainActivity : AppCompatActivity() {
         tvTipPercentLabel = findViewById(R.id.tvTipPercentLabel)
         tvTipAmount = findViewById(R.id.tvTipAmount)
         tvTotalAmount = findViewById(R.id.tvTotalAmount)
+        tvTipDescription = findViewById(R.id.tvTipDescription)
+
 
         seekBarTip.progress = INITIAL_TIP_PERCENT
         tvTipPercentLabel.text = "$INITIAL_TIP_PERCENT%"
+        updateTipDescription(INITIAL_TIP_PERCENT)
         seekBarTip.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
             @SuppressLint("SetTextI18n")
             override fun onProgressChanged(
@@ -53,6 +57,7 @@ class MainActivity : AppCompatActivity() {
                 Log.i(TAG, "onProgressChanged $progress")
                 tvTipPercentLabel.text = "$progress %"
                 computeTipAndTotal()
+                updateTipDescription(progress)
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {
@@ -103,5 +108,17 @@ class MainActivity : AppCompatActivity() {
 
         tvTipAmount.text = String.format("%.2f", tipAmount)
         tvTotalAmount.text = String.format("%.2f", totalAmount)
+    }
+
+    private fun updateTipDescription(tipPercent: Int) {
+        val tipDescription = when (tipPercent) {
+            in 0..9 -> "Poor"
+            in 10..15 -> "Acceptable"
+            in 16..19 -> "Good"
+            in 20..24 -> "Great"
+            else -> "Amazing"
+        }
+
+        tvTipDescription.text = tipDescription
     }
 }
