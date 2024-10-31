@@ -3,6 +3,8 @@ package com.example.jollytip
 import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.widget.EditText
 import android.widget.SeekBar
@@ -50,6 +52,7 @@ class MainActivity : AppCompatActivity() {
             ) {
                 Log.i(TAG, "onProgressChanged $progress")
                 tvTipPercentLabel.text = "$progress %"
+                computeTipAndTotal()
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {
@@ -57,8 +60,48 @@ class MainActivity : AppCompatActivity() {
 
             override fun onStopTrackingTouch(p0: SeekBar?) {
             }
-
         })
 
+        etBaseAmount.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(
+                p0: CharSequence?,
+                p1: Int,
+                p2: Int,
+                p3: Int
+            ) {}
+
+            override fun onTextChanged(
+                p0: CharSequence?,
+                p1: Int,
+                p2: Int,
+                p3: Int
+            ) {}
+
+            override fun afterTextChanged(s: Editable?) {
+                Log.i(TAG, "afterTextChanged $s")
+                computeTipAndTotal()
+            }
+        })
+    }
+
+    private fun computeTipAndTotal() {
+        if (etBaseAmount.text.isEmpty()) {
+            tvTipAmount.text = ""
+            tvTotalAmount.text = ""
+            return
+        }
+
+        // Get value of base and tip percent
+        // Compute the tip and total
+        // Update UI to show values
+        val baseAmount = etBaseAmount.text.toString().toDoubleOrNull() ?: 0.0
+        val tipPercent = seekBarTip.progress
+
+        // Calculate the tip and total amounts
+        val tipAmount = baseAmount * tipPercent / 100
+        val totalAmount = baseAmount + tipAmount
+
+        tvTipAmount.text = String.format("%.2f", tipAmount)
+        tvTotalAmount.text = String.format("%.2f", totalAmount)
     }
 }
