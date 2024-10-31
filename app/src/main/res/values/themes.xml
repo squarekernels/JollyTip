@@ -2,7 +2,14 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.JollyTip" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/primary_blue</item>
+        <item name="colorOnPrimary">@color/primary_text</item>
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorSecondary">@color/secondary_blue</item>
+        <item name="colorOnSecondary">@color/secondary_text</item>
+
+        <item name="android:statusBarColor">@color/primary_blue</item>
+        <item name="android:colorBackground">@color/material_dynamic_primary90</item>
     </style>
 
     <style name="Theme.JollyTip" parent="Base.Theme.JollyTip" />

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="primary_blue">#0E6E96</color>
+    <color name="secondary_blue">#47C9FF</color>
+    <color name="primary_text">#DE7700</color>
+    <color name="blue_background">#29ACE3</color>
+    <color name="secondary_text">#E38C29</color>
 </resources>

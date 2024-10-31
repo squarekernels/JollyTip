@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
 
     <!-- Views on left side -->
     <TextView
         android:id="@+id/tvBaseLabel"
+        android:textColor="@color/primary_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -23,6 +27,7 @@
         android:id="@+id/tvTipPercentLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/primary_text"
         android:layout_marginTop="32dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textStyle="bold"
@@ -34,6 +39,7 @@
         android:id="@+id/tvTipLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/primary_text"
         android:layout_marginTop="32dp"
         android:text="Tip"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -45,6 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:textColor="@color/primary_text"
         android:text="Total"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toEndOf="@+id/tvTipLabel"
@@ -55,6 +62,7 @@
         android:id="@+id/etBaseAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/secondary_text"
         android:layout_marginStart="32dp"
         android:ems="8"
         android:hint="Bill amount"
@@ -69,6 +77,7 @@
         android:id="@+id/seekBar"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:textColor="@color/secondary_text"
         android:max="30"
         app:layout_constraintBottom_toBottomOf="@+id/tvTipPercentLabel"
         app:layout_constraintStart_toStartOf="@+id/etBaseAmount"
@@ -78,6 +87,7 @@
         android:id="@+id/tvTipAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/secondary_text"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tvTipLabel"
@@ -91,6 +101,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
+        android:textColor="@color/secondary_text"
         app:layout_constraintBottom_toBottomOf="@+id/tvTotalLabel"
         app:layout_constraintStart_toStartOf="@+id/tvTipAmount"
         app:layout_constraintTop_toTopOf="@+id/tvTotalLabel"
@@ -104,6 +115,7 @@
         android:fontFamily="sans-serif-condensed-light"
         android:text="✨📱Made by Hamza Khan📱✨"
         android:textAllCaps="true"
+        android:textColor="@color/secondary_text"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
