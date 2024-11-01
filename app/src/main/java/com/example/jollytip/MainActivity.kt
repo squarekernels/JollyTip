@@ -8,6 +8,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.SeekBar
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -28,7 +29,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvTipAmount: TextView
     private lateinit var tvTotalAmount: TextView
     private lateinit var tvTipDescription: TextView
-    private lateinit var constraintLayout: ConstraintLayout
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,7 +47,6 @@ class MainActivity : AppCompatActivity() {
         tvTipAmount = findViewById(R.id.tvTipAmount)
         tvTotalAmount = findViewById(R.id.tvTotalAmount)
         tvTipDescription = findViewById(R.id.tvTipDescription)
-        constraintLayout = findViewById(R.id.main)
 
         seekBarTip.progress = INITIAL_TIP_PERCENT
         tvTipPercentLabel.text = "$INITIAL_TIP_PERCENT%"
@@ -128,8 +127,8 @@ class MainActivity : AppCompatActivity() {
         // Update color based on tip percentage
         val color = ArgbEvaluator().evaluate(
             tipPercent.toFloat() / seekBarTip.max,
-            ContextCompat.getColor(this, R.color.secondary_text),
-            ContextCompat.getColor(this, R.color.primary_blue)
+            ContextCompat.getColor(this, R.color.primary_color),
+            ContextCompat.getColor(this, R.color.accent_color)
         ) as Int
         tvTipDescription.setTextColor(color)
 //        constraintLayout.setBackgroundColor(color)

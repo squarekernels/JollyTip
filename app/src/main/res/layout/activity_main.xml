@@ -10,15 +10,16 @@
     tools:context=".MainActivity">
 
     <!-- Views on left side -->
+
     <TextView
         android:id="@+id/tvBaseLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
         android:text="Base"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/primary_text"
+        android:textColor="@color/text_icons"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/primary_text"
+        android:textColor="@color/text_icons"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/tvBaseLabel"
         app:layout_constraintTop_toBottomOf="@+id/tvBaseLabel"
@@ -41,7 +42,7 @@
         android:layout_marginTop="56dp"
         android:text="Tip"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/primary_text"
+        android:textColor="@color/text_icons"
         app:layout_constraintEnd_toEndOf="@+id/tvTipPercentLabel"
         app:layout_constraintTop_toBottomOf="@+id/tvTipPercentLabel" />
 
@@ -52,7 +53,7 @@
         android:layout_marginTop="32dp"
         android:text="Total"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/primary_text"
+        android:textColor="@color/text_icons"
         app:layout_constraintEnd_toEndOf="@+id/tvTipLabel"
         app:layout_constraintTop_toBottomOf="@+id/tvTipLabel" />
 
@@ -65,7 +66,7 @@
         android:ems="8"
         android:hint="Bill amount"
         android:inputType="numberDecimal"
-        android:textColor="@color/secondary_text"
+        android:textColor="@color/primary_text"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/tvBaseLabel"
         app:layout_constraintStart_toEndOf="@+id/tvBaseLabel"
@@ -77,7 +78,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:max="30"
-        android:textColor="@color/secondary_text"
+        android:textColor="@color/primary_text"
         app:layout_constraintBottom_toBottomOf="@+id/tvTipPercentLabel"
         app:layout_constraintStart_toStartOf="@+id/etBaseAmount"
         app:layout_constraintTop_toTopOf="@+id/tvTipPercentLabel" />
@@ -87,7 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/secondary_text"
+        android:textColor="@color/primary_text"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tvTipLabel"
         app:layout_constraintStart_toStartOf="@+id/seekBar"
@@ -99,7 +100,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/secondary_text"
+        android:textColor="@color/primary_text"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tvTotalLabel"
         app:layout_constraintStart_toStartOf="@+id/tvTipAmount"
@@ -111,6 +112,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:textColor="@color/primary_text"
         app:layout_constraintEnd_toEndOf="@+id/seekBar"
         app:layout_constraintStart_toStartOf="@+id/seekBar"
         app:layout_constraintTop_toBottomOf="@+id/seekBar"
@@ -126,10 +128,11 @@
         android:text="✨📱Made by Hamza Khan📱✨"
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/secondary_text"
+        android:textColor="@color/primary_text"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
