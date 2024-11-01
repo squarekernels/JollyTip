@@ -1,5 +1,6 @@
 package com.example.jollytip
 
+import android.animation.ArgbEvaluator
 import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
 import android.os.Bundle
@@ -11,6 +12,9 @@ import android.widget.SeekBar
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintSet
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
@@ -24,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvTipAmount: TextView
     private lateinit var tvTotalAmount: TextView
     private lateinit var tvTipDescription: TextView
+    private lateinit var constraintLayout: ConstraintLayout
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         tvTipAmount = findViewById(R.id.tvTipAmount)
         tvTotalAmount = findViewById(R.id.tvTotalAmount)
         tvTipDescription = findViewById(R.id.tvTipDescription)
-
+        constraintLayout = findViewById(R.id.main)
 
         seekBarTip.progress = INITIAL_TIP_PERCENT
         tvTipPercentLabel.text = "$INITIAL_TIP_PERCENT%"
@@ -120,5 +125,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         tvTipDescription.text = tipDescription
+        // Update color based on tip percentage
+        val color = ArgbEvaluator().evaluate(
+            tipPercent.toFloat() / seekBarTip.max,
+            ContextCompat.getColor(this, R.color.secondary_text),
+            ContextCompat.getColor(this, R.color.primary_blue)
+        ) as Int
+        tvTipDescription.setTextColor(color)
+//        constraintLayout.setBackgroundColor(color)
     }
 }
